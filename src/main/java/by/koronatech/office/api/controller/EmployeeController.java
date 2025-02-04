@@ -1,5 +1,7 @@
 package by.koronatech.office.api.controller;
 
+import by.koronatech.office.api.dto.CreateEmployeeDTO;
+import by.koronatech.office.api.dto.GetEmployeeDTO;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -7,26 +9,23 @@ import org.springframework.web.bind.annotation.*;
 public class EmployeeController {
 
     @GetMapping("/{department}")
-    public String getEmployeesByDepartment(@PathVariable String department){
-        return "";
+    public GetEmployeeDTO getEmployeesByDepartment(@PathVariable String department){
+        return new GetEmployeeDTO(null,null,null,null,null);
     }
 
     @PostMapping("/{department}")
-    public String addEmployeeToDepartment(@PathVariable String department,@RequestParam String employee){
-        return "";
+    public void addEmployeeToDepartment(@PathVariable String department, @RequestParam CreateEmployeeDTO createEmployeeDTO){
+
     }
     @PatchMapping("/{id}")
-    public String addToEmployeeManagerStatus(@RequestParam String employee){
-        return "";
+    public void addToEmployeeManagerStatus(@PathVariable long id){
     }
 
     @PatchMapping("/{id}")
-    public String updateEmployeeInformation(@PathVariable String id, @RequestParam String employee){
-        return "";
+    public void updateEmployeeInformation(@PathVariable long id, @RequestParam CreateEmployeeDTO createEmployeeDTO){
     }
 
-    @DeleteMapping("/{department}")
-    public String deleteEmployeeFromDepartment(@PathVariable String department, @RequestParam String employee){
-        return "";
+    @DeleteMapping("/{id}")
+    public void deleteEmployeeFromDepartment(@PathVariable long id){
     }
 }
