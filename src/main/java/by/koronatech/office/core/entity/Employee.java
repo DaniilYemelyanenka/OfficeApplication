@@ -5,12 +5,18 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class Department {
+@NoArgsConstructor
+public class Employee {
 
     private Long id;
 
     private String name;
+
+    private Double salary;
+
+    private String department;
+
+    private Boolean manager;
 
 }
