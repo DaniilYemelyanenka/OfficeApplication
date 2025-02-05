@@ -21,7 +21,7 @@ public class EmployeeController {
     public void addToEmployeeManagerStatus(@PathVariable long id){
     }
 
-    @PatchMapping("/{id}")
+    @PatchMapping("/update{id}")
     public void updateEmployeeInformation(@PathVariable long id, @RequestParam CreateEmployeeDTO createEmployeeDTO){
     }
 
