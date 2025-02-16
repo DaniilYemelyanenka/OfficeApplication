@@ -53,6 +53,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     public GetEmployeeDTO findById(long id){
-        return employeeMapper.toDto(employeeRepository.stream().filter(employee -> employee.getId().equals(id)).findFirst().get());
+        return employeeMapper.toDto(employeeRepository
+                .stream()
+                .filter(employee -> employee.getId().equals(id))
+                .findFirst()
+                .get());
     }
 }
